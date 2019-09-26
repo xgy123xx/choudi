@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>抽屉新热榜</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!--主要采用bootstrap框架-->
+    <!--实现了滚动监听广告；右下角固定定位向上、向下的盒子；点赞评论；发布按钮可以发布新内容；对取消评论按钮进行文章对否内容判断；顶端登录注册按钮实现模态框页面-->
+</head>
+<body>
+<link rel="stylesheet" href="css/index.css">
+<!--导航条-->
+<nav class="navbar navbar-fixed-top head-nav">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="Brand">
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav" id="my-navbar">
+                <li><a href="#" >全部</a></li>
+                <li><a href="#">42区</a></li>
+                <li><a href="#">段子</a></li>
+                <li><a href="#">图片</a></li>
+                <li><a href="#">挨踢1024</a></li>
+                <li><a href="#">你问我答</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" aria-describedby="basic-addon2">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search" id="basic-addon2"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right" id="my-navbar-right">
+                <li><a href="#">注册</a></li>
+                <li><a href="#">登录</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!--内容部分-->
+<div class="container main-container clearfixed">
+    <div class="row">
+        <!--左边评论区域-->
+        <div class="col-md-8">
+            <div class="container-nav clearfix">
+                <div id="nav-left">
+                    <a href="#" class="btn active">最新</a>
+                    <a href="#" class="btn">发现</a>
+                    <a href="#" class="btn">人类发布</a>
+                    <span id="current-time"></span>
+                </div>
+                <div id="nav-right">
+                    <span>即时排序</span>
+                    <a href="#" class="btn btn-linke">24小时</a>
+                    <a href="#" class="btn btn-linke">3天</a>
+                    <a href="#postEssay" class="btn btn-success" id="postBtn">+ 发布</a>
+                </div>
+            </div>
+            <div class="list-group" id="my-list">
+                <div class="list-group-item my-item">
+                    <div class="row">
+                        <div class="col-md-10 items-content">
+                            <h4 class="list-group-item-heading"><a href="#">“让汽车业再次伟大”：特朗普政府要求降低汽车排放标准</a>&emsp;<span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;<b>0</b> </h4>
+                            <p class="list-group-item-text">特朗普政府周四推出一项提案，有意减轻对汽车排放的约束，并建议撤销加州的《清洁空气法》豁免，在全美境内推行统一的排放标准。已经有20个州的总检察长威胁要对此发起诉讼。</p>
+                            <div class="foot-option">
+                                <button class="btn btn-default btn-sm goodJob" type="submit">点赞</button>
+                                <button class="btn btn-default btn-sm toggleComment" type="submit">评论</button>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="images/list_p1.jpg" alt="..." class="img-thumbnail list-pict">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--用来显示评论区域-->
+                        <div class="comment">
+                            <p>最热评论<a href="#" class="close closeComment">x</a></p>
+                            <ul class="comment-list">
+                            </ul>
+                            <textarea name=""  class="form-control msg"></textarea>
+                            <div class="comment-control clearfix">
+                                <button class="btn btn-danger btn-sm cancel-msg">取消</button>
+                                <button class="btn btn-primary btn-sm send-msg">发送</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item my-item">
+                    <div class="row">
+                        <div class="col-md-10 items-content">
+                            <h4 class="list-group-item-heading"><a href="#">95家小米生态链“杂货铺”公司：10大领域布局，爆款疲软</a>&emsp;<span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;<b>0</b> </h4>
+                            <p class="list-group-item-text">今年底恰好是小米生态链发展的第五年，小米对外称小米生态链企业已超100家。根据小米IPO招股书显示，其中有超90家企业生产智能硬件。</p>
+                            <div class="foot-option">
+                                <button class="btn btn-default btn-sm goodJob" type="submit">点赞</button>
+                                <button class="btn btn-default btn-sm toggleComment" type="submit">评论</button>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="images/list_p1.jpg" alt="..." class="img-thumbnail list-pict">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--用来显示评论区域-->
+                        <div class="comment">
+                            <p>最热评论<a href="#" class="close closeComment">x</a></p>
+                            <ul class="comment-list">
+                            </ul>
+                            <textarea name=""  class="form-control msg"></textarea>
+                            <div class="comment-control clearfix">
+                                <button class="btn btn-danger btn-sm cancel-msg">取消</button>
+                                <button class="btn btn-primary btn-sm send-msg">发送</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item my-item">
+                    <div class="row">
+                        <div class="col-md-10 items-content">
+                            <h4 class="list-group-item-heading"><a href="#">王健林的万达怎么了？两高管被抓涉案千万，发债遇阻</a>&emsp;<span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;<b>0</b> </h4>
+                            <p class="list-group-item-text">刘向红8月1日，地产巨头万达的高管尹某、金某在北京万达总部被警方带走。据知情人士透露，这两名高管涉嫌利用职务之便谋取私利，且数额巨大。低买高卖获利千万据介绍，涉案的尹某、金某此前分别担任集团区域营销副总经理、总经理职务。案发地在万达中...</p>
+                            <div class="foot-option">
+                                <button class="btn btn-default btn-sm goodJob" type="submit">点赞</button>
+                                <button class="btn btn-default btn-sm toggleComment" type="submit">评论</button>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="images/list_p1.jpg" alt="..." class="img-thumbnail list-pict">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--用来显示评论区域-->
+                        <div class="comment">
+                            <p>最热评论<a href="#" class="close closeComment">x</a></p>
+                            <ul class="comment-list">
+                            </ul>
+                            <textarea name=""  class="form-control msg"></textarea>
+                            <div class="comment-control clearfix">
+                                <button class="btn btn-danger btn-sm cancel-msg">取消</button>
+                                <button class="btn btn-primary btn-sm send-msg">发送</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item my-item">
+                    <div class="row">
+                        <div class="col-md-10 items-content">
+                            <h4 class="list-group-item-heading"><a href="#">王健林的万达怎么了？两高管被抓涉案千万，发债遇阻</a>&emsp;<span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;<b>0</b> </h4>
+                            <p class="list-group-item-text">刘向红8月1日，地产巨头万达的高管尹某、金某在北京万达总部被警方带走。据知情人士透露，这两名高管涉嫌利用职务之便谋取私利，且数额巨大。低买高卖获利千万据介绍，涉案的尹某、金某此前分别担任集团区域营销副总经理、总经理职务。案发地在万达中...</p>
+                            <div class="foot-option">
+                                <button class="btn btn-default btn-sm goodJob" type="submit">点赞</button>
+                                <button class="btn btn-default btn-sm toggleComment" type="submit">评论</button>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="images/list_p1.jpg" alt="..." class="img-thumbnail list-pict">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--用来显示评论区域-->
+                        <div class="comment">
+                            <p>最热评论<a href="#" class="close closeComment">x</a></p>
+                            <ul class="comment-list">
+                            </ul>
+                            <textarea name=""  class="form-control msg"></textarea>
+                            <div class="comment-control clearfix">
+                                <button class="btn btn-danger btn-sm cancel-msg">取消</button>
+                                <button class="btn btn-primary btn-sm send-msg">发送</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item my-item">
+                    <div class="row">
+                        <div class="col-md-10 items-content">
+                            <h4 class="list-group-item-heading"><a href="#">王健林的万达怎么了？两高管被抓涉案千万，发债遇阻</a>&emsp;<span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;<b>0</b> </h4>
+                            <p class="list-group-item-text">刘向红8月1日，地产巨头万达的高管尹某、金某在北京万达总部被警方带走。据知情人士透露，这两名高管涉嫌利用职务之便谋取私利，且数额巨大。低买高卖获利千万据介绍，涉案的尹某、金某此前分别担任集团区域营销副总经理、总经理职务。案发地在万达中...</p>
+                            <div class="foot-option">
+                                <button class="btn btn-default btn-sm goodJob" type="submit">点赞</button>
+                                <button class="btn btn-default btn-sm toggleComment" type="submit">评论</button>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="images/list_p1.jpg" alt="..." class="img-thumbnail list-pict">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--用来显示评论区域-->
+                        <div class="comment">
+                            <p>最热评论<a href="#" class="close closeComment">x</a></p>
+                            <ul class="comment-list">
+                            </ul>
+                            <textarea name=""  class="form-control msg"></textarea>
+                            <div class="comment-control clearfix">
+                                <button class="btn btn-danger btn-sm cancel-msg">取消</button>
+                                <button class="btn btn-primary btn-sm send-msg">发送</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item my-item">
+                    <h4 class="list-group-item-heading"><a href="#">List group item heading</a></h4>
+                    <p class="list-group-item-text">...</p>
+                </div>
+            </div>
+            <!--发帖功能-->
+            <div id="postEssay">
+                <form>
+                    <div id="essay-header">
+                        <label>发布新帖</label>
+                        <input type="text" id="essayTitle">
+                    </div>
+                    <div id="essay-body" >
+                        <textarea rows="5" id="essayContent"></textarea>
+                    </div>
+                    <div id="essay-foot" >
+                        <button class="btn btn-primary" id="send">发送</button>
+                        <button class="btn btn-danger" id="postCancel">取消</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--右边广告区域-->
+        <div class="col-md-4">
+            <div class="right-imgs clearfix">
+                <img src=images/report.png alt="">
+                <img src="images/report_children.png" alt="">
+            </div>
+            <div class="recommend">
+                <a href="#" class="btn btn-link"> <span class="glyphicon glyphicon-zoom-in"></span> 如何避免被封号</a>
+            </div>
+            <!--利用滚动监听实现广告-->
+            <div class="right-ad">
+                <a href="#" >
+                    <img src="images/homepage_download.png" alt="">
+                </a>
+            </div>
+            <div class="right-band">
+                <p><b>24小时全部 <span style="color:red">TOP 10</span></b></p>
+                <div class="hot-band">
+                    <div class="title">
+                        最热榜
+                    </div>
+                    <ul>`
+                        <li><span>356</span><a href="#">安全帽的必要性</a></li>
+                        <li><span>356</span><a href="#">安全帽的必要性</a></li>
+                        <li><span>356</span><a href="#">安全帽的必要性</a></li>
+                        <li><span>356</span><a href="#">【向雅士利索赔：“结石宝宝”父亲郭利的十年维权路】7月31日，“结石宝宝”父亲郭利发布《致雅士利（国际）乳业公开信》，对“三聚氰胺”事件相关责任人进行追责。他要求雅士利集团兑现当初300万美元加孳息共1000万美元的赔偿协议，另提出追加对其本人和家庭造成的伤害综合（精神）赔偿金3000万美元。</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div  class="right-ad clearfixed " id="ad">
+                <a href="#">
+                    <img src="images/ad1.jpg" alt="">
+                </a>
+                <p id="timer-content"><span id="ad-time"></span> 5秒后才可以关闭哦</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="my-foot">
+        <div class="row ">
+            <div class="col-md-10 col-md-offset-1">
+                <a href="#" class="btn btn-linke">关于我们</a>
+                <span>|</span>
+                <a href="#" class="btn btn-linke">联系我们</a>
+                <span>|</span>
+                <a href="#" class="btn btn-linke">服务条款</a>
+                <span>|</span>
+                <a href="#" class="btn btn-linke">隐私政策</a>
+                <span>|</span>
+                <a href="#" class="btn btn-linke">抽屉新热榜工具</a>
+                <span>|</span>
+                <a href="#" class="btn btn-linke">下载客户端</a>
+                <span>|</span>
+                <a href="#" class="btn btn-linke">意见反馈</a>
+                <span>|</span>
+                <a href="#" class="btn btn-linke">友情链接</a>
+                <span>|</span>
+                <a href="#" class="btn btn-linke">公告</a>
+                <a href="#"><img src="images/ct_rss.gif" alt=""></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 foot-content">
+                <p>旗下站点 ©2018 chouti.com 京ICP备09053974号-3 京公网安备 110102004562</p>
+                <p>违法和不良信息举报： 电话：010-58302039 邮箱：jubao@chouti.com</p>
+                <p>版权所有：北京格致璞科技有限公司</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="return-top">
+    <a href="#"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    <a href="#my-foot"><span class="glyphicon glyphicon-chevron-down"></span></a>
+</div>
+
+<!--新创建的盒子样式-->
+<div class="list-group-item my-item" id="new-temper" style="display: none">
+    <div class="row">
+        <div class="col-md-10 items-content">
+            <h4 class="list-group-item-heading"><a href="#">temper</a>&emsp;<span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;<b>0</b> </h4>
+            <p class="list-group-item-text">content</p>
+            <div class="foot-option">
+                <button class="btn btn-default btn-sm goodJob" type="submit">点赞</button>
+                <button class="btn btn-default btn-sm toggleComment" type="submit">评论</button>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <img src="images/list_p1.jpg" alt="..." class="img-thumbnail list-pict">
+        </div>
+    </div>
+    <div class="row">
+        <!--用来显示评论区域-->
+        <div class="comment">
+            <p>最热评论<a href="#" class="close closeComment">x</a></p>
+            <ul class="comment-list">
+            </ul>
+            <textarea name=""  class="form-control msg"></textarea>
+            <div class="comment-control clearfix">
+                <button class="btn btn-danger btn-sm cancel-msg">取消</button>
+                <button class="btn btn-primary btn-sm send-msg">发送</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--bootstrap模态框，取消评论按钮-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" >关闭评论</h4>
+            </div>
+            <div class="modal-body">
+                评论框内还有未发送的内容，是否要直接退出而删除这些内容？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="clearContent">是的</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--css手写模态框，登录注册页面-->
+<div id="makeGrayScreen">
+    <div id="mymodel-content">
+        <p id="mymodel-header"><span>登录</span><span>注册</span><span>X</span></p>
+        <div id="content">
+            <div id="login" class="subContent">
+                <div id="login-header">
+                    <a class="btn">手机号登录</a>
+                    <span>|</span>
+                    <a class="btn">用户名登录</a>
+                </div>
+                <form action="post" class="active" id="phone-login">
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option>中国(+ 86)</option>
+                            <option>日本(+ 87)</option>
+                            <option>韩国(+ 88)</option>
+                            <option>美国(+ 89)</option>
+                            <option>美国(+ 89)</option>
+                            <option>美国(+ 89)</option>
+                            <option>美国(+ 89)</option>
+                            <option>美国(+ 89)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="手机号">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="密码">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" checked>一周内自动登录
+                        </label>
+                        <label>
+                            <a href="#" class="btn btn-link">忘记密码？</a>
+
+                        </label>
+                    </div>
+                    <button class="btn btn-primary btn">登录</button>
+                </form>
+                <form action="post" id="username-login">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="用户名">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="密码">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" checked>一周内自动登录
+                        </label>
+                        <label>
+                            <a href="#" class="btn btn-link">忘记密码？</a>
+                        </label>
+                    </div>
+                    <button class="btn btn-primary btn">登录</button>
+                </form>
+            </div>
+        </div>
+        <div id="register" class="subContent">
+            <div id="register-header">
+                <span>1 填写手机号码</span>
+                <span>|</span>
+                <span>2 填写基本资料</span>
+            </div>
+            <form id="write-phone" >
+                <div class="form-group">
+                    <select class="form-control">
+                        <option>中国(+ 86)</option>
+                        <option>日本(+ 87)</option>
+                        <option>韩国(+ 88)</option>
+                        <option>美国(+ 89)</option>
+                        <option>美国(+ 89)</option>
+                        <option>美国(+ 89)</option>
+                        <option>美国(+ 89)</option>
+                        <option>美国(+ 89)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="accept-msg">
+                    <input type="text" class="form-control phone-num" placeholder="手机号">
+                    <button type="button" class="btn btn-primary" >获取验证码</button>
+                </div>
+                <div id="my-tip">
+                    收不到短信？
+                    <a href="#">获取语言验证码</a>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="验证码">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="密码">
+                </div>
+                <button class="btn btn-primary" id="register-next">下一步</button>
+            </form>
+            <form id="fill-info" class="form-horizontal">
+                <div class="form-group">
+                    <label for="name"  class="col-sm-3 control-label">昵称</label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" id="name" placeholder="张三">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile" class="col-sm-3 control-label">头像</label>
+                    <div class="col-sm-9">
+                         <input type="file" id="exampleInputFile" >
+                    </div>
+                </div>
+                <div class="checkbox">
+                    <label class="radio-inline">
+                        性别
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="man" id="inlineRadio1" value="option1"> 男
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="female" id="inlineRadio2" value="option2"> 女
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name=" two-in-one" id="inlineRadio3" value="option3"> 不便透露
+                    </label>
+                </div>
+                    <button type="submit" class="btn btn-default col-sm-4 col-sm-offset-2">提交</button>
+
+
+            </form>
+
+        </div>
+    </div>
+</div>
+<!--是否清空内容模态框-->
+<!--bootstrap模态框，取消文章按钮-->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">关闭发帖</h4>
+            </div>
+            <div class="modal-body">
+                评论框内还有未发送的内容，是否要直接退出而删除这些内容？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="clearEssay">是的</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

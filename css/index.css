@@ -1,0 +1,347 @@
+/*当屏幕在768-992，，让左边选项卡隐藏搜索框隐藏*/
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    #my-navbar{
+        display: none;
+    }
+}
+
+
+body{
+    background-color: #ededed;
+}
+ul{
+    list-style:none;
+}
+.main-container{
+    padding-top: 60px;
+    background-color: white;
+}
+/*导航栏属性*/
+.head-nav{
+    /*修改导航条颜色*/
+    background-color:#2459a2;
+}
+#my-navbar>li>a{
+    /*修改导航条标签字体颜色*/
+    color: #c0cddf;
+}
+#my-navbar>li>a:hover{
+    /*修改导航条标签字体悬浮颜色*/
+    color: white;
+    background-color:	#4682B4;
+}
+#my-navbar>li>a:visited{
+    color: #c0cddf;
+    background-color: darkblue;
+}
+#my-navbar>li>a.active{
+    color: #c0cddf;
+    background-color: darkblue;
+}
+
+#my-navbar-right>li>a{
+    /*修改右边登录注册按钮字体颜色*/
+    color: white;
+}
+
+#my-navbar-right>li>a:hover{
+    /*修改右边登录注册按钮悬浮时颜色*/
+    background-color:	#4682B4;
+}
+#my-navbar-right>li>a:visited{
+    background-color: red;
+}
+/*内容部分*/
+/*右边内容部分*/
+.right-imgs{
+    width: 100%;
+}
+.right-imgs img:first-child{
+    float: left;
+}
+.right-imgs img:last-child{
+    float: right;
+}
+.container-nav{
+    padding-bottom:10px;
+}
+.container-nav a:hover{
+    /*内容导航按钮设置*/
+    text-decoration: underline;
+}
+.container-nav a.active{
+    border-radius: 20px;
+    background-color: #f0f4f8;
+}
+.container-nav #nav-left{
+    float: left;
+}
+.container-nav #nav-right{
+    float: right;
+}
+.recommend .btn{
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding:10px 0;
+}
+.right-ad img{
+    width:100%;
+    margin-bottom: 10px;
+}
+#ad{
+    display: block;
+}
+
+/*右下角最热推荐*/
+.right-band .hot-band .title{
+    padding:10px 0;
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
+.right-band .hot-band ul{
+    padding: 0;
+}
+.right-band .hot-band ul li{
+    padding: 20px 0;
+    border-bottom: 1px dashed;
+}
+.right-band .hot-band ul li span{
+    display: inline-block;
+    background-color: #cccccc;
+    margin-right: 10px;
+}
+.right-band .hot-band ul a{
+    font-size: 14px;
+    color: #000000;
+}
+#ad-time{
+    display: inline-block;
+    padding:0 10px;
+    color: red;
+}
+#timer-content{
+    background-color: #cccccc;
+    margin: -10px 0 0 0;
+    padding:0;
+    display: none;
+}
+/*中间内容部分*/
+.foot-option{
+    margin-top: 10px;
+}
+.my-item{
+    border: 0;
+    border-bottom: 1px solid #DDDDDD;
+    padding: 15px;
+    margin: 0;
+}
+/*评论区域*/
+.comment{
+    background-color: #f6f6f6;
+    border:1px solid #cbdcee;
+    padding:10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    position: relative;
+    display: none;
+}
+.msg{
+    margin-top:10px;
+}
+.comment-control{
+    padding-top:10px;
+}
+.comment>p{
+    padding-bottom: 5px;
+    border-bottom:1px dashed #cccccc;
+}
+.comment-control button{
+    float: right;
+    margin-left:10px;
+}
+.comment-list{
+    padding: 5px;
+}
+.comment-list>li{
+    padding: 5px 0;
+    border-bottom:1px dashed #cccccc;
+}
+
+#my-foot{
+    /*底层栏目*/
+    border-top:1px solid #cccccc;
+    margin:40px 10px 0;
+    padding:10px 0;
+    font-size:12px;
+
+}
+#my-foot a{
+    font-size:12px;
+    margin:0 10px;
+    padding:0;
+
+}
+.foot-content p{
+    text-align: center;
+}
+/*侧边返回最顶部按钮*/
+#return-top{
+    position:fixed;
+    bottom:50px;
+    left:50px;
+    border: 1px solid #DEDEDE;
+}
+#return-top a{
+    display: none;
+    width:50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: white;
+}
+
+/*登录注册模态框样式设置*/
+#makeGrayScreen{
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index:1000;
+}
+#mymodel-content{
+    position: absolute;
+    width: 800px;
+    height:400px;
+    top: 50%;
+    left: 50%;
+    margin-left:-400px;
+    margin-top: -200px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+#mymodel-header{
+    width: 100%;
+    height: 30px;
+    position: relative;
+    padding:5px 10px;
+    background-color:#abb6d2 ;
+    border-radius: 5px 5px 0 0;
+    margin:0;
+}
+#mymodel-header span{
+    position: absolute;
+}
+#mymodel-header span:nth-child(1){
+    left:10px;
+}
+#mymodel-header span:nth-child(2){
+    left:50%;
+}
+#mymodel-header span:nth-child(3){
+    right:10px;
+    cursor: pointer;
+}
+/*模态框中间部分*/
+#content{
+    width: 100%;
+}
+.subContent{
+    width:400px;
+    height: 369px;
+    padding:10px 50px;
+}
+#login-header{
+    text-align: center;
+}
+#login{
+    float: left;
+    border-right: 1px solid #cccccc;
+}
+#register{
+    float: right;
+    border-left: 1px solid #cccccc;
+}
+/*登录表单*/
+#phone-login{
+    display: none;
+    margin-top:20px;
+}
+#username-login{
+    display: none;
+    margin-top:20px;
+}
+#login form.active{
+    display: block;
+}
+/*注册部分*/
+#register-header{
+    text-align: center;
+    padding:6px;
+}
+#register-header span:nth-child(2n-1){
+    margin:0 10px;
+    color: #337ab7;
+    line-height: 1.42857143;
+}
+
+#write-phone{
+    margin-top:20px;
+}
+#accept-msg>div{
+    padding: 0;
+}
+#accept-msg{
+  overflow: hidden;
+}
+#my-tip{
+    text-align: right;
+}
+.phone-num{
+    float: left;
+    width:60%;
+    display: inline-block;
+}
+.phone-num+button{
+        float: right;
+}
+/*填写个人信息样式*/
+#fill-info{
+    display: none;
+}
+#fill-info>button{
+    margin-top:20px;
+}
+
+
+
+/*发帖样式  */
+#postEssay{
+display: none;
+}
+#essay-header{
+    margin: 2px 0;
+}
+#essay-header>input{
+    width: 100%;
+    border: 1px solid #c8cccf;
+    border-radius: 5px;
+    outline: 0;
+}
+#essay-body>textarea{
+    width:100%;
+    border: 1px solid #c8cccf;
+    border-radius: 5px;
+    outline: 0;
+}
+#essay-foot{
+width:100%;
+}
+
+
+
+
+
